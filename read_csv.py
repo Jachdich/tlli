@@ -5,7 +5,7 @@ with open("words.json", "w") as f:
     words = json.loads(f.read())
 """
 
-with open("con.csv", "r") as f:
+with open("conl.csv", "r") as f:
     data = f.read()
 data = [n.split(",") for n in data.split("\n")]
 #labels = [n for i, n in enumerate(data[0]) if (i + 1) % 2]
@@ -30,12 +30,13 @@ for letter in "abcdefghijklmnopqrstuvwxyzáéíóú":#
     print(letter, "█" * counts[letter] + " " + str(counts[letter]))
 
 
-with open("con.csv", "r") as f:
+with open("conl.csv", "r") as f:
     data = f.read()
 
 data = [n.split(",") for n in data.split("\n")]
 
-words = {}
+con_to_eng = {}
+eng_to_con = {}
 for row in data[2:]:
     for i in range(0, len(row), 2):
         if row[i] != "":

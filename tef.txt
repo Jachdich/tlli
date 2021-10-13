@@ -1,0 +1,4 @@
+"Conlang translation" "English translation"
+"Conlang translation number 2", "English Translation 2"
+"et enol anjerrí lote" "I am very angry" THIS WILL GET IGNORED!
+
