@@ -4,6 +4,7 @@ import json
 with open("words.json", "w") as f:
     words = json.loads(f.read())
 """
+
 with open("con.csv", "r") as f:
     data = f.read()
 data = [n.split(",") for n in data.split("\n")]
@@ -28,6 +29,20 @@ for letter in "abcdefghijklmnopqrstuvwxyzáéíóú":#
         counts[letter] = 0
     print(letter, "█" * counts[letter] + " " + str(counts[letter]))
 
+
+with open("con.csv", "r") as f:
+    data = f.read()
+
+data = [n.split(",") for n in data.split("\n")]
+
+words = {}
+for row in data[2:]:
+    for i in range(0, len(row), 2):
+        if row[i] != "":
+            if not row[i] in words:
+                words[row[i]] = row[i + 1]
+
+print(words)
 """
 with open("words.json", "w") as f:
     f.write(json.dumps(words))
